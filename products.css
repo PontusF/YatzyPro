@@ -1,0 +1,31 @@
+#app {
+    width: 90%;
+    margin: 0 auto;
+}
+
+section {
+    display: inline-block;
+    width: 33%;
+    border: thin solid green;
+    padding: 1em;
+    margin: 1em;
+    vertical-align: top;
+}
+
+section div {
+    background: red;
+    color: white;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+section.varukorg div {
+    background: lightblue;
+    color: black;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+section div p {
+    padding: 5px 1em;
+}
