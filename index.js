@@ -22,8 +22,20 @@ Vue.component('product-list', {
               v-bind:product="product"
               v-bind:key="index">
             </product-holder>
+            <h3 v-if="totalSum>0" > {{ totalSum }} </h3>
         </section>
-    `
+    `,
+    computed: {
+        totalSum: function() {
+            // Räkna bara ut om title är varukorg.
+            if (this.title == "Varukorg") {
+                var total = this.products.reduce(function(accumulator, currentValue) {
+                    return accumulator + currentValue.price;
+                }, 0);
+                return total;
+            }
+        }
+    }
 })
 
 // Här är "root-komponenten", dvs själva appen, 
@@ -32,16 +44,15 @@ const app = new Vue({
     el: "#app",
     data: {
         products: [{
-                name: "Lampa",
-                price: 200
-            },
-            {
-                name: "Stol",
-                price: 2100
-            },
-            { name: "Soffa" },
-            { name: "Bord" }
-        ],
+            name: "Korv",
+            price: 23
+        }, {
+            name: "Fisk",
+            price: 39
+        }, {
+            name: "Gurka",
+            price: 12
+        }],
         varukorg: []
     },
     component: ['product-list']
