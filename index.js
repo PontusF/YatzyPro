@@ -4,7 +4,7 @@ const Product = {
         template: `
         <div>
             <p> {{ this.product.name }} </p>
-            <p v-if="this.product.price"> {{ this.product.price }} </p>
+            <p v-if="this.product.consumerPrice"> {{ this.product.consumerPrice }} </p>
         </div>
     `
     }
@@ -22,15 +22,15 @@ Vue.component('product-list', {
               v-bind:product="product"
               v-bind:key="index">
             </product-holder>
-            <h3 v-if="totalSum>0" > {{ totalSum }} </h3>
+            <h3 v-if="totalSum>0" >Totalt: {{ totalSum }} </h3>
         </section>
     `,
     computed: {
         totalSum: function() {
             // Räkna bara ut om title är varukorg.
             if (this.title == "Varukorg") {
-                var total = this.products.reduce(function(accumulator, currentValue) {
-                    return accumulator + currentValue.price;
+                var total = this.products.reduce(function(accumulator, product) {
+                    return accumulator + product.consumerPrice;
                 }, 0);
                 return total;
             }
@@ -43,17 +43,23 @@ Vue.component('product-list', {
 const app = new Vue({
     el: "#app",
     data: {
-        products: [{
-            name: "Korv",
-            price: 23
-        }, {
-            name: "Fisk",
-            price: 39
-        }, {
-            name: "Gurka",
-            price: 12
-        }],
+        products: [],
         varukorg: []
     },
-    component: ['product-list']
+    mounted: function() {
+
+        var self = this;
+        var xhr = new XMLHttpRequest;
+
+        xhr.onreadystatechange = function() {
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                console.log(xhr.response.products)
+                self.products = xhr.response.products;
+            }
+        }
+
+        xhr.open("GET", "https://www.hulabeck.se/html/temp/products.json");
+        xhr.responseType = "json";
+        xhr.send();
+    }
 })
