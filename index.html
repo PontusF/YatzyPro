@@ -18,7 +18,9 @@
         <combo-list title="YatzyPro"
 
         ></combo-list>
-        <p id="score" >SCORE:{{$store.state.combos[17].sum}}</p>
+        <div>
+          <p id="score" >SCORE:{{$store.state.combos[17].sum}}</p>
+      </div>
       </div>
         <div id="rollButton"
           v-on:click="$store.commit('roll')">
@@ -31,6 +33,7 @@
             :id="id"
             :key="index"
           ></dice-list>
+
         </div>
         <p> ROLLS LEFT: {{3-$store.state.currentRoll}}</p>
     </div>

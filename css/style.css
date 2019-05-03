@@ -128,9 +128,14 @@
 
   #score{
     text-align: center;
-    font-size: 3vw;
+    font-size: 2vw;
+  }
+  #helpMessage{
+    text-align: center;
+    font-size: 1.5vw;
   }
   p{
+
     color: var(--theme-secondary);
     font-size: 15;
   }
@@ -144,7 +149,8 @@
   }
 
   #rollButton{
-    padding-left: 30%;
+    padding-right: 30%;
+    text-align: center;
     font-size: 40;
     color: var(--theme-1);
     height:100px;
@@ -204,7 +210,7 @@
     font-size: 100%;
   }
   p{
-    font-size: 50%;
+    font-size: 100%;
   }
   header{
     display:grid;
