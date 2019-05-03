@@ -485,6 +485,12 @@ const app = new Vue({
     el: "#app",
 
     created(){
-      store.commit('roll')
+      store.commit('roll'),
+      document.addEventListener("keyup", function (event){
+        console.log(event.which-49);
+        if(event.which>48 && event.which<54){
+          store.state.diceArray[event.which-49].available = !store.state.diceArray[event.which-49].available;
+        }
+      })
     }
 })
