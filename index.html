@@ -4,15 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Products in vue</title>
-    <link rel="stylesheet" href="products.css">
+    <title>YatzyPro</title>
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex"></script>
+    <script src="themes.js"></script>
 </head>
 
 <body>
+  <h1> YatzyPro </h1>
     <div id="app">
-        <product-list title="Produktlista" v-bind:products="products"></product-list>
-        <product-list title="Varukorg" v-bind:products="varukorg" class="varukorg"></product-list>
+      <div id=firstTwo>
+        <combo-list title="YatzyPro"
+
+        ></combo-list>
+        <p id="score" >SCORE:{{$store.state.combos[17].sum}}</p>
+      </div>
+        <div id="rollButton"
+          v-on:click="$store.commit('roll')">
+          <p v-if="$store.state.currentRoll==3">CHOOSE SCORE</p>
+          <p v-else>ROLL</p>
+        </div>
+        <div id="diceField">
+          <dice-list class="diceImage"
+            v-for="(dice, id, index) in $store.state.diceArray"
+            :id="id"
+            :key="index"
+          ></dice-list>
+        </div>
+        <p> ROLLS LEFT: {{3-$store.state.currentRoll}}</p>
     </div>
 </body>
 

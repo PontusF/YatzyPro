@@ -1,0 +1,265 @@
+
+@media only screen and (max-width: 600px) {
+  #app {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+
+      width: 100%;
+      margin: 0 auto;
+    font-size: 16;
+  }
+
+  #firstTwo{
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  #score{
+    font-size: 25;
+  }
+  p{
+    color: var(--theme-secondary);
+    font-size: 15;
+  }
+  .lockedDice{
+    filter: grayscale(50%);
+    border: solid black 1px;
+  }
+  #diceField{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto ;
+  }
+
+  #rollButton{
+    text-align: center;
+    font-size: 40;
+    color: var(--theme-1);
+    height:100px;
+  }
+
+  .rotate{
+  transform: rotate3d(1, 1, 1, 1080deg);
+  }
+
+
+  img{
+    transform: rotate3d(0, 0, 0, 0deg);
+      transition: transform 1s;
+    height:8vh;
+    width: 8vh;
+  }
+
+  #allCombinations{
+    width:170px;
+  }
+  .combo{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    background: var(--theme-2);
+  }
+
+
+
+  section div {
+      font-weight: 700;
+      border-radius: 4px;
+  }
+
+  .free{
+    background: var(--theme-secondary);
+  }
+
+  .glow{
+
+  }
+
+  section div p {
+      padding: 5px 1em;
+  }
+
+
+  body{
+    transition: color 2s;
+    transition: background-color 1s;
+    background-color: var(--theme-main, white); */
+  }
+
+  .icons{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 40px;
+    font-size: 10vw;
+    grid-gap:1vw;
+    margin: 20px;
+  }
+
+
+  h1{
+    font-size: 200%;
+  }
+  p{
+    font-size: 75%;
+  }
+  header{
+    display:grid;
+    grid-template-columns: 1fr  6fr;
+  }
+  .scores{
+    grid-template-columns: repeat(7, 10vw);
+  }
+}
+
+
+@media only screen and (min-width: 600px) {
+  #app {
+    display: grid;
+    padding-left: 30%;
+    padding-right: 20%;
+    grid-template-rows: auto auto auto auto;
+
+      margin: 0 auto;
+    font-size: 18;
+  }
+
+  #firstTwo{
+    display: grid;
+    grid-template-columns: 20% auto;
+  }
+
+  #score{
+    text-align: center;
+    font-size: 1.5vw;
+  }
+  p{
+    color: var(--theme-secondary);
+    font-size: 15;
+  }
+  .lockedDice{
+    filter: grayscale(50%);
+    border: solid black 1px;
+  }
+  #diceField{
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15% 15%  ;
+  }
+
+  #rollButton{
+    padding-left: 30%;
+    font-size: 40;
+    color: var(--theme-1);
+    height:100px;
+  }
+
+  .rotate{
+  transform: rotate3d(1, 1, 1, 1080deg);
+  }
+
+
+  img{
+    transform: rotate3d(0, 0, 0, 0deg);
+      transition: transform 1s;
+    height:7vmin;
+    width: 7vmin;
+  }
+
+  #allCombinations{
+    width:170px;
+  }
+  .combo{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    background: var(--theme-2);
+  }
+
+
+
+  section div {
+      font-weight: 700;
+      border-radius: 4px;
+  }
+
+  .free{
+    background: var(--theme-secondary);
+  }
+
+  .glow{
+
+  }
+
+  section div p {
+      padding: 5px 1em;
+  }
+
+
+  body{
+    transition: color 2s;
+    transition: background-color 1s;
+    background-color: var(--theme-main, white); */
+  }
+
+
+  }
+
+  h1{
+    font-size: 100%;
+  }
+  p{
+    font-size: 50%;
+  }
+  header{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+  }
+  .scores{
+    grid-template-columns: repeat(7, 10vw);
+  }
+}
+
+
+h1{
+  font-family: 'Montserrat', sans-serif;
+  color:var(--theme-secondary);
+}
+i{
+  color: var(--theme-secondary);
+}
+
+
+
+.myIcon{
+  transition: font-size 0.3s;
+  padding-left: 1vw;
+  padding-right: 1vh;
+}
+
+
+
+.question{
+  transition: color 0.7s;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 200%
+}
+.visibleQuestion{
+  color: var(--theme-secondary);
+}
+
+.invisible{
+  color: var(--theme-main);
+}
+
+.basicAnswer:hover:nth-child(1n+0){
+
+  background-color: var(--theme-secondary);
+}
+.theme{
+  color: var(--theme-secondary);
+}
+.reset{
+  color: var(--theme-secondary);
+}
+
+.gameOverScreen{
+  text-align: center;
+  color: var(--theme-secondary);
+  font-size: 600%;
